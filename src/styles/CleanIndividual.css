@@ -1,0 +1,250 @@
+/* Assuming navbar height is about 70px */
+.clean-individual-wrapper {
+  background: linear-gradient(135deg, #e8f5e8 0%, #d0e0d0 100%);
+  min-height: 100vh;
+  padding: 4rem 1rem 2rem; /* Top padding increased to clear fixed navbar */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+/* Hero Section Styling */
+.hero-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #4a7c59 0%, #6b9d6b 100%);
+  border-radius: 20px;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Main title with text gradient clipped */
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #ffffff, #d0e0d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle below main title */
+.main-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Cards grid layout */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+}
+
+/* Individual card styling */
+.clean-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #d0d0d0;
+  position: relative;
+  overflow: hidden;
+}
+
+.clean-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4a7c59, #6b9d6b);
+  border-radius: 20px 20px 0 0;
+}
+
+.clean-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Card header with emoji and title */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.card-emoji {
+  font-size: 2.5rem;
+  background: #4a7c59; /* Dark Green */
+  padding: 0.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  min-height: 60px;
+  color: #ffffff;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2d4a32; /* Dark Green */
+  margin: 0;
+}
+
+/* Card description italic below header */
+.card-description {
+  color: #5a6c5a; /* Soft Green */
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* List of items within card */
+.card-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: #4a4a4a; /* Dark Gray */
+  font-size: 1rem;
+}
+
+.card-item:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+/* Bullet for list items */
+.item-bullet {
+  color: #4a7c59; /* Dark Green */
+  font-weight: bold;
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+/* Call to action container */
+.call-to-action {
+  text-align: center;
+  background: #4a7c59; /* Dark Green */
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  color: #ffffff;
+  margin-top: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.call-to-action h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.call-to-action p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Call to action button style */
+.cta-button {
+  background: #6b9d6b; /* Medium Green */
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  background: #4a7c59; /* Dark Green */
+}
+
+/* Responsive Design */
+
+/* Medium devices */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .main-subtitle {
+    font-size: 1rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .clean-card {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .card-emoji {
+    font-size: 2rem;
+    min-width: 50px;
+    min-height: 50px;
+  }
+  
+  .call-to-action h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Small devices */
+@media (max-width: 480px) {
+  .clean-individual-wrapper {
+    padding: 3rem 0.5rem 2rem; /* Retain top padding for navbar */
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
