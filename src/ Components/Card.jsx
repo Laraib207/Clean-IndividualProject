@@ -37,11 +37,11 @@ const HeroAbout = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            Welcome to the Neat and Clean World
+            Welcome to the Neat and Clean Worldd
           </h1>
           
           <p className="hero-subtitle">
-            We want to live in a neat and clean world.
+            We want to  to live in a neat and clean world.
           </p>
           
           <div className="hero-description">
