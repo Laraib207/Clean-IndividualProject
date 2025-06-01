@@ -120,6 +120,14 @@
 } */ 
 
 /* NAVBAR BASE */
+/* NAVBAR BASE */
+
+/* NAVBAR BASE */
+/* NAVBAR BASE */
+
+
+/* NAVBAR BASE */
+/* NAVBAR BASE */
 .navbar {
   position: fixed;
   top: 0;
@@ -139,6 +147,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* MARQUEE */
 .marquee-wrapper {
   background-color: #D7E4C0;
   padding: 0.5rem 0;
@@ -151,43 +160,63 @@
   letter-spacing: 1px;
 }
 
+/* NAVBAR CONTENT */
 .navbar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
 }
+
 @media (min-width: 768px) {
   .navbar-content {
     padding: 0.75rem 2.5rem;
+    justify-content: center; /* Center the nav links on desktop */
   }
 }
 
+/* MENU BUTTON - Only visible on mobile */
 .menu-button {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #4F6F52;
   background: none;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.3s ease;
+  display: block;
 }
+
 .menu-button:hover {
   transform: scale(1.1);
   color: #A6BB8D;
 }
+
 .menu-button:focus {
   outline: none;
 }
 
-.nav-links {
-  display: none;
+/* Hide menu button on desktop */
+@media (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
 }
-.nav-links.md\:flex {
-  display: flex;
+
+/* DESKTOP NAV LINKS - Only visible on desktop */
+.nav-links {
+  display: none; /* Hidden by default on mobile */
   justify-content: center;
   align-items: center;
 }
+
+/* Show nav links only on desktop */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
 .nav-links a {
   color: #3A4A2F;
   font-weight: 600;
@@ -198,34 +227,55 @@
   transition: all 0.3s ease;
   border-radius: 8px;
 }
+
 .nav-links a:hover {
   background-color: #CFE1B9;
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(100, 150, 100, 0.3);
 }
 
+/* MOBILE MENU - Only visible on mobile when opened */
 .mobile-menu {
   background-color: #E9EBD8;
   padding: 1.25rem 1.5rem;
-  animation: slideDown 0.3s ease forwards;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  animation: slideDown 0.3s ease forwards;
 }
+
+/* Hide mobile menu on desktop */
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
 .mobile-menu a {
+  display: block;
   font-size: 1.125rem;
   font-weight: 600;
   color: #2F3E25;
   margin-bottom: 0.75rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-}
-.mobile-menu a:hover {
-  background-color: #DDE6C9;
-  transform: scale(1.03);
+  padding: 0.5rem 0;
+  width: 100%;
 }
 
+.mobile-menu a:hover {
+  background-color: #DDE6C9;
+  border-radius: 6px;
+  transform: scale(1.03);
+  padding: 0.5rem 0.6rem;
+}
+
+.mobile-menu a:last-child {
+  margin-bottom: 0;
+}
+
+/* SLIDE ANIMATION FOR MOBILE MENU */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -236,4 +286,3 @@
     transform: translateY(0);
   }
 }
-

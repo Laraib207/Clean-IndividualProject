@@ -37,11 +37,11 @@ const HeroAbout = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            Welcome to the Neat and Clean Worldd
+            Welcome to the Neat and Clean World
           </h1>
           
           <p className="hero-subtitle">
-            We want to  to live in a neat and clean world.
+            We want to live in a neat and clean world.
           </p>
           
           <div className="hero-description">
@@ -77,30 +77,57 @@ const HeroAbout = () => {
   );
 };
 
-const Card = ({ title, description, image, imageDescription, reverse }) => {
+const Card = ({ title, description, image, imageDescription, index }) => {
   return (
-    <div className={`card ${reverse ? 'reverse' : ''}`}>
-      <div className="card-image-container">
-        <img 
-          src={image} 
-          alt={imageDescription}
-          className="card-image"
-        />
-        <div className="card-image-overlay"></div>
-      </div>
-      
+    <div className="card" data-index={index}>
+      {/* Text Content on Top */}
       <div className="card-content">
-        <div className="card-content-divider"></div>
+        <div className="card-content-header">
+          <div className="card-number">{String(index + 1).padStart(2, '0')}</div>
+          <div className="card-category">Initiative</div>
+        </div>
         
         <h2 className="card-title">{title}</h2>
         
         <p className="card-description">{description}</p>
         
-        <div className="image-story">
-          <p className="image-story-text">
-            <strong>Visual Story:</strong> {imageDescription}
-          </p>
+        <div className="card-meta">
+          <div className="card-stats">
+            <div className="stat-item">
+              <span className="stat-number">100+</span>
+              <span className="stat-label">Projects</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">50K+</span>
+              <span className="stat-label">Impact</span>
+            </div>
+          </div>
+          
+          <button className="learn-more-btn">
+            Learn More
+            <svg className="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 8h14M9 1l6 7-6 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
+      </div>
+      
+      {/* Image at Bottom */}
+      <div className="card-image-container">
+        <img 
+          src={image} 
+          alt={imageDescription}
+          className="card-image"
+          loading="lazy"
+        />
+        <div className="card-image-overlay">
+          <div className="image-story">
+            <p className="image-story-text">
+              {imageDescription}
+            </p>
+          </div>
+        </div>
+        <div className="card-gradient"></div>
       </div>
     </div>
   );
@@ -119,16 +146,18 @@ const CardList = () => {
           </p>
         </div>
         
-        {cardsData.map((card, index) => (
-          <Card
-            key={index}
-            title={card.title}
-            description={card.description}
-            image={card.image}
-            imageDescription={card.imageDescription}
-            reverse={index % 2 !== 0}
-          />
-        ))}
+        <div className="cards-grid">
+          {cardsData.map((card, index) => (
+            <Card
+              key={index}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              imageDescription={card.imageDescription}
+              index={index}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
